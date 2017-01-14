@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PoorMansAccordion.MainPage">
+
+
+  <StackLayout>
+
+    <!-- Veggies Accordian Node -->
+    <StackLayout  BackgroundColor="{Binding VeggiesAccordionNode.HeaderBackGroundColor}" Margin="0, 30, 0, 0">
+
+      <BoxView HeightRequest="1" Color="{Binding VeggiesAccordionNode.LineColor}"  HorizontalOptions="FillAndExpand"></BoxView>
+
+      <!-- Accordian Node Header -->
+      <!-- Padding: Left, Top, Right, Buttom -->
+      <StackLayout Orientation="Horizontal" Padding="5, 10,10,10">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer
+             Command="{Binding VeggiesAccordionNode.ExpandContractAccordion}">
+          </TapGestureRecognizer>
+        </StackLayout.GestureRecognizers>
+        <Label TextColor="{Binding VeggiesAccordionNode.HeaderTextColor}" Text="{Binding VeggiesAccordionNode.HeaderText}" />
+        <Label TextColor="{Binding VeggiesAccordionNode.HeaderTextColor}"  HorizontalOptions="EndAndExpand" Text="{Binding VeggiesAccordionNode.IconText}" />
+      </StackLayout>
+
+      <BoxView HeightRequest="1" Color="{Binding VeggiesAccordionNode.LineColor}" HorizontalOptions="FillAndExpand"></BoxView>
+    </StackLayout>
+
+    <!-- ********************************************************
+                           CONTENT: Veggies
+          This is where you put your app specific content!
+         ******************************************************** -->
+    <StackLayout HeightRequest="{Binding VeggiesAccordionNode.ContentHeight}" IsVisible="{Binding VeggiesAccordionNode.IsExpanded}">
+        <Label Text="Your favorite veggies"></Label> 
+        <ListView  ItemsSource="{Binding VeggieList}" />
+    </StackLayout>
+
+   
+    
+    
+    
+    
+    <!-- Fruit Accordian Node -->
+    <StackLayout  BackgroundColor="{Binding FruitAccordionNode.HeaderBackGroundColor}">
+      <BoxView HeightRequest="1" Color="{Binding FruitAccordionNode.LineColor}"  HorizontalOptions="FillAndExpand"></BoxView>
+
+      <!-- Accordian Node Header -->
+      <StackLayout Orientation="Horizontal" Padding="5,10,10, 10">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer
+             Command="{Binding FruitAccordionNode.ExpandContractAccordion}">
+          </TapGestureRecognizer>
+        </StackLayout.GestureRecognizers>
+        <Label TextColor="{Binding FruitAccordionNode}" Text="{Binding FruitAccordionNode.HeaderText}" />
+        <Label TextColor="{Binding FruitAccordionNode}"  HorizontalOptions="EndAndExpand" Text="{Binding FruitAccordionNode.IconText}" />
+      </StackLayout>
+
+      <BoxView HeightRequest="1" Color="Gray"  HorizontalOptions="FillAndExpand"></BoxView>
+    </StackLayout>
+
+    <!-- ********************************************************
+                            CONTENT: Fruit
+         This is where you put your app specific content                       
+         ********************************************************    -->
+    <StackLayout HeightRequest="{Binding FruitAccordionNode.ContentHeight}" IsVisible="{Binding FruitAccordionNode.IsExpanded}">
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Favorite Fruit"></Label>
+        <Entry WidthRequest="50" HorizontalOptions="EndAndExpand" Text="Blackberries"></Entry>
+      </StackLayout>
+
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Least Favorite"></Label>
+        <Entry WidthRequest="50" HorizontalOptions="EndAndExpand" Text="Tomator"></Entry>
+      </StackLayout>
+
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Allergic To"></Label>
+        <Entry WidthRequest="50" HorizontalOptions="EndAndExpand" Text="Strawberries"></Entry>
+      </StackLayout>
+
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Last Fruit Eaten"></Label>
+        <Entry WidthRequest="50" HorizontalOptions="EndAndExpand" Text="Blue Berries"></Entry>
+      </StackLayout>
+    </StackLayout>
+  </StackLayout>
+  
+</ContentPage>
