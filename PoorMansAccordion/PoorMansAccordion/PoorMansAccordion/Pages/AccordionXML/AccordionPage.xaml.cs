@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace PoorMansAccordion
+namespace PoorMansAccordion.Pages.AccordionXML
 {
-    public partial class MainPage : ContentPage
+    public partial class AccordionPage : ContentPage
     {
-        public MainPage()
+        public AccordionPage(AccordionPageViewModel vm)
         {
             InitializeComponent();
-            this.BindingContext = new MainPageViewModel(this.Navigation);
+            this.BindingContext = vm;
         }
     }
 }
