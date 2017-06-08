@@ -16,8 +16,8 @@ namespace PoorMansAccordion
         public static Color Default_Accent_Color = Color.FromHex("67AF71");
         public static Color Default_Accent_Font_Color = Color.White;
 
-        public static Color Button_BackColor = Color.Lime;
-        public static Color Button_TextColor = Color.Black;
+        public static Color Button_BackColor = Color.Olive;
+        public static Color Button_TextColor = Color.White;
         
         public static double Small_Button_Width = 125;
         public static double Small_Button_Height = 40;

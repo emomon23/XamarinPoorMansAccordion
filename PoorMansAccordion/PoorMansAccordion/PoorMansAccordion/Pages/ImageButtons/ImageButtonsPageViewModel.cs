@@ -21,6 +21,7 @@ namespace PoorMansAccordion.Pages.ImageButtons
                 return new Command<string>((string buttonText) =>
                 {
                     _selectedFishSpecies = AllMyFishSpecieses.FirstOrDefault(f => f.Name == buttonText);
+                    App.Current.MainPage.DisplayAlert("Fish clicked", $"You chose {_selectedFishSpecies.Name}!", "Close");
                 });
             }
         }
